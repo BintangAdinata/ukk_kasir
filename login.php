@@ -63,7 +63,7 @@ if (isset($_POST['username'])) {
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <div class="flex-grow-1 bg-login-image" style="background-image: url(img/login.jpg);"></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">

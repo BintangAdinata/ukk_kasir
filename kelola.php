@@ -5,7 +5,7 @@ require 'koneksi.php';
 if (isset($_POST['tambah'])) {
     $nama = $_POST['nama'];
     $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = md5($_POST['password']); // Menggunakan MD5
     $level = $_POST['level'];
 
     $sql = "INSERT INTO user (nama, username, password, level) VALUES ('$nama', '$username', '$password', '$level')";
