@@ -46,7 +46,11 @@ $res = $koneksi->query($sql);
                 <td><?= $row['username']; ?></td>
                 <td><?= ucfirst($row['level']); ?></td>
                 <td>
-                    <a href="?hapus=<?= $row['userid']; ?>" class="btn btn-danger btn-sm">Hapus</a>
+                    <a href="index.php?page=kelola&hapus=<?= $row['userid']; ?>"
+                        class="btn btn-danger btn-sm"
+                        onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">
+                        Hapus
+                    </a>
                 </td>
             </tr>
             <?php } ?>

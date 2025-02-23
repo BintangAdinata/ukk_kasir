@@ -22,9 +22,9 @@ $offset = ($halaman - 1) * $limit; // Hitung offset
 // Query untuk mendapatkan data transaksi dengan pagination dan filter tanggal
 $sql = "SELECT trafaktur, trapelanggan, tratanggal, tratotal,
         (SELECT SUM(tdjumlah) FROM transaksi_detail WHERE trafaktur=t.trafaktur) AS tdjumlah,
-        username
+        COALESCE(username, 'Tidak diketahui') AS username
         FROM transaksi t
-        INNER JOIN user u ON u.userid = t.userid
+        LEFT JOIN user u ON u.userid = t.userid
         $where
         ORDER BY tratanggal DESC
         LIMIT $limit OFFSET $offset";
