@@ -26,7 +26,7 @@ $sql = "SELECT trafaktur, trapelanggan, tratanggal, tratotal,
         FROM transaksi t
         LEFT JOIN user u ON u.userid = t.userid
         $where
-        ORDER BY tratanggal DESC
+        ORDER BY trafaktur ASC
         LIMIT $limit OFFSET $offset";
 $res = $koneksi->query($sql);
 

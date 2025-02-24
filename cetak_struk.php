@@ -63,6 +63,7 @@ $query_detail = mysqli_query($koneksi, "SELECT td.*, p.pronama FROM transaksi_de
                 <th>Produk</th>
                 <th>Jml</th>
                 <th>Harga</th>
+                <th>Diskon</th>
                 <th>Subtotal</th>
             </tr>
             <?php while ($row = mysqli_fetch_assoc($query_detail)) { ?>
@@ -70,6 +71,7 @@ $query_detail = mysqli_query($koneksi, "SELECT td.*, p.pronama FROM transaksi_de
                 <td><?= $row['pronama'] ?></td>
                 <td><?= $row['tdjumlah'] ?></td>
                 <td><?= number_format($row['tdharga'], 0, ',', '.') ?></td>
+                <td><?= $row['tddiskon'] ?>%</td>
                 <td><?= number_format($row['tdsubtotal'], 0, ',', '.') ?></td>
             </tr>
             <?php } ?>

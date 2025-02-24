@@ -12,7 +12,7 @@ if (!isset($_SESSION['user'])) {
 global $koneksi;
 
 $cari = isset($_GET['c']) ? $_GET['c'] : "";
-$sql = "SELECT * FROM produk WHERE pronama LIKE '%$cari%'";
+$sql = "SELECT * FROM produk WHERE pronama LIKE '%$cari%' AND projumlah > 0";
 $res = mysqli_query($koneksi, $sql);
 $count = mysqli_num_rows($res);
 
@@ -20,12 +20,12 @@ $count = mysqli_num_rows($res);
 if (isset($_GET['id'])) {
     $proid = intval($_GET['id']);
 
-    $sql = "SELECT * FROM produk WHERE proid = $proid";
+    $sql = "SELECT * FROM produk WHERE proid = $proid AND projumlah > 0";
     $res = mysqli_query($koneksi, $sql);
     $count = mysqli_num_rows($res);
 
     if ($count == 0) {
-        $msg = 'Barang yang dipilih tidak ada!';
+        $msg = 'Barang yang dipilih tidak tersedia atau stok habis!';
     } else {
         $produk = mysqli_fetch_assoc($res);
         $produk['jumlah'] = 1;
