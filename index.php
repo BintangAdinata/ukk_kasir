@@ -37,7 +37,28 @@ $page = isset($_GET['page']) && in_array($_GET['page'], $allowed_pages[$level]) 
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Kasir - Dashboard</title>
+    <?php
+        // Daftar judul halaman
+        $page_titles = [
+            'home' => 'Dashboard',
+            'barang' => 'Data Barang',
+            'barang_tambah' => 'Tambah Barang',
+            'barang_hapus' => 'Hapus Barang',
+            'barang_ubah' => 'Edit Barang',
+            'penjualan' => 'Penjualan',
+            'penjualan_pilih' => 'Pilih Barang',
+            'penjualan_hapus' => 'Hapus Penjualan',
+            'cetak_struk' => 'Cetak Struk',
+            'laporan' => 'Laporan',
+            'laporan_cetak' => 'Cetak Laporan',
+            'kelola' => 'Kelola User'
+        ];
+
+        // Ambil judul berdasarkan halaman yang diakses
+        $page_title = $page_titles[$page] ?? 'Kasir';
+    ?>
+
+    <title>Kasir - <?= $page_title ?></title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
