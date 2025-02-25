@@ -68,6 +68,7 @@ if (isset($_POST['username'])) {
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Selamat Datang!</h1>
+                                        <h3 class="h4 text-gray-900 mb-4">Di Aplikasi Kasir</h3>
                                         <?= $msg ? '<h6 class="text-dark mb-4">'.$msg.'</h6>' : ""?>
                                     </div>
                                     <form class="user" method="post">
